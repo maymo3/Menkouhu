@@ -1,0 +1,95 @@
+- var css_path = '.'
+
+doctype html
+html(lang="ja")
+    head(prefix="og: http://ogp.me/ns#")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Menkouhu
+        meta(name="description" content="Menkouhuは日本語のローマ字入力に特化したMac用キーボード配列です。")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="https://menkouhu.keyboard.jp/")
+        meta(property="og:title" content="日本語のためのキーボード配列")
+        meta(property="og:image" content="https://menkouhu.keyboard.jp/img/ogp.png")
+        meta(property="og:description" content="Menkouhuは日本語のローマ字入力に特化したMac用キーボード配列です。")
+        meta(property="og:locale" content="ja_JP")
+        meta(property="og:site_name" content="Menkouhu")
+        meta(name="twitter:card" content="summary_large_image")
+        meta(name="twitter:site" content="@maymo3maymo")
+        meta(name="msapplication-TileImage" content= css_path + "/mstile.png")
+        meta(name="msapplication-TileColor" content="#556DAC")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500&family=Quicksand:wght@400;500;700&display=swap")
+        link(rel="stylesheet" href= css_path + "/css/reset.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css")
+        link(rel="stylesheet" href= css_path + "/css/style.css" type="text/css")
+    body
+        header#header.header
+            .header-contents
+                .sp-header
+                    h1: a(href="#") Menkouhu
+                    .menubtn#menubtn
+                nav: ul.nav#nav
+                    li: a.nav-item(href="#features") 特徴
+                    li: a.nav-item(href="#howtouse") 使い方
+                    li: a.nav-item(href="#download") ダウンロード
+        section.about
+            .maincopy
+                h1 日本語のための#[br]キーボード配列
+                p Menkouhuは日本語のローマ字入力に特化した#[br]Mac用キーボード配列です。
+                .button: a(href= css_path + "/download/Menkouhu.dmg" download) 無料ダウンロード
+            .mainimg
+                img(src= css_path + "/img/keyboard.png")
+        section#features.features
+            .features-contents
+                h1.section-title 特徴
+                .features-cards
+                    .features-card.fadeUpTrigger
+                        .features-text
+                            h2 よく使う文字を打ちやすく
+                            p 日本語で出現頻度の高い子音をホームポジションに配置しました。
+                        img.features-img(src= css_path + "/img/Keyboard2022011001.png")
+                    .features-card.fadeUpTrigger
+                        .features-text
+                            h2 母音はすべて右手で
+                            p 左手と右手で交互に打鍵できます。
+                        img.features-img(src= css_path + "/img/Keyboard2022011002.png")
+                    .features-card.fadeUpTrigger
+                        .features-text
+                            h2 記号もらくらく
+                            p 形の似た記号は同じキーに配置されており、感覚的に覚えられます。
+                        img.features-img(src= css_path + "/img/Keyboard2022011003.png")
+        section.layout
+            h1.section-title 配列
+            .layout-img.fadeUpTrigger
+                img(src= css_path + "/img/keyboard.png")
+        section#howtouse.howtouse
+            h1.section-title 使い方
+            .howtousecards
+                .howtousecard.fadeUpTrigger
+                    h2 STEP1
+                    h3 ダウンロード
+                    img.icon(src= css_path + "/img/downloadicon.png")
+                    p Menkouhu.dmgをダウンロードして開きます。
+                .howtousecard.fadeUpTrigger
+                    h2 STEP2
+                    h3 フォルダに追加
+                    img(src= css_path + "/img/foldericon.png")
+                    p Menkouhu.keylayoutをKeyboard Layoutsのエイリアスにドラッグ＆ドロップします。
+                .howtousecard.fadeUpTrigger
+                    h2 STEP3
+                    h3 レイアウトに設定
+                    img(src= css_path + "/img/settingicon.png")
+                    p システム環境設定→入力ソース→日本語から「英字のレイアウト」をMenkouhuに設定します。
+        section.quotation
+            blockquote
+                h1 めんこう-ふはい【面向不背】
+                p 前後どちらから見ても、整っていて美しく立派なことのたとえ。
+                //- span 三省堂『#[cite 新明解四字熟語辞典]』から引用
+        footer#download.footer
+            h1 Menkouhu 
+            p 日本語のためのキーボード配列
+            .button: a(href= css_path + "/download/Menkouhu.dmg" download) 無料ダウンロード
+        script(src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js")
+        script(src= css_path + "/js/script.js")
+    

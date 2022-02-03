@@ -1,0 +1,474 @@
+@import _variable.sass
+
+// = = = = = 全体 = = = = =
+
+html
+    font-size: 62.5%
+
+    @media #{$mq-md}
+        font-size: calc(100vw / 78.5 * 0.9)
+
+    @media #{$mq-xs}
+        // font-size: calc(100vw / 37.5 * 0.88)
+        font-size: calc(100vw / 37.5)
+
+
+*, *::before, *::after
+    box-sizing: border-box
+
+body
+    +sans
+    +font-size(1.6rem,1.4rem)
+    color: $dark-color
+    line-height: 1.7
+    background-color: $light-color
+    letter-spacing: 0.1em
+    font-weight: 300
+
+a:link, a:visited, a:hover, a:active
+    color: inherit
+    text-decoration: none
+
+.button
+    a
+        +font-size(2.2rem,1.2rem)
+        padding: 1.5rem 5.5rem
+        background-color: $secondary-color
+        color: $light-color
+        display: inline-block
+        border-radius: 35px
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.2)
+        -webkit-transition: background-color 0.6s ease
+        transition: background-color 0.6s ease
+
+        @media #{$mq-xs}
+            padding: 1.3rem 3.3rem
+
+        &:hover
+            background-color: $tertiary-color
+        &:active
+            box-shadow: none
+            -webkit-transform: translateY(3px)
+            transform: translateY(3px)
+
+.section-title
+    +font-size(3.6rem,2.2rem)
+    text-align: center
+    font-weight: 500
+    position: relative
+    margin: 10rem auto
+    +space-size("margin","top")
+
+    @media #{$mq-xs}
+        margin-bottom: 4.8rem
+
+
+    &::after
+        content: ''
+        height: 5px
+        width: 20px
+        background-color: $secondary-color
+        border-radius: 2.5px
+        position: absolute
+        bottom: -8px
+        left: calc(50% - 10px)
+
+// = = = = = header = = = = =
+
+.header
+    height: 7rem
+    background-color: $primary-color
+    color: $light-color
+    position: fixed
+    z-index: 1
+    width: 100%
+    top: 0
+
+    @media #{$mq-xs}
+        height: 6rem
+
+    h1
+        +font-size(3.3rem,2.3rem)
+        font-weight: 400
+        // margin-left: 6.15vw
+
+        @media #{$mq-xs}
+            line-height: 6rem
+
+.header-contents
+    height: 100%
+    width: 100%
+    position: relative
+
+    @media #{$mq-sm}
+        +container
+        +flex
+
+.sp-header
+    @media #{$mq-xs}
+        margin: 0 auto
+        width: 87.7%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        z-index: 10
+        position: relative
+        background-color: $primary-color
+
+.menubtn
+    background-image: url(../img/hamburger.png)
+    background-size: contain
+    height: 40px
+    width: 40px
+
+    @media #{$mq-sm}
+        height: 0
+        width: 0
+
+.menubtn.open
+    background-image: url(../img/close.png)
+
+// = = = = = nav = = = = =
+
+.nav
+    +flex
+
+    @media #{$mq-xs}
+        background-color: $primary-color
+        height: calc(100vh - 6rem)
+        width: 100vw
+        justify-content: flex-start
+        left: 0
+        padding: 12rem 0
+        position: fixed
+        top: -100vh
+        transition: .3s
+        // display: none
+
+        li
+            width: 100%
+.nav.open
+    top: 6rem
+
+.nav-item 
+    position: relative
+    display: block
+    
+    @media #{$mq-xs}
+        width: 100%
+        text-align: center
+        padding: 2rem 0
+
+    @media #{$mq-sm}
+        padding: 0 4rem
+        line-height: 7rem
+
+    &::after
+        content: ''
+        background-color: $light-color
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        position: absolute
+        bottom: 9px
+        left: calc(50% - 2px)
+        opacity: 0
+        -webkit-transform: translateY(50%)
+        transform: translateY(50%)
+        -webkit-transition: all 0.6s ease
+        transition: all 0.6s ease
+    
+    &:hover
+        // box-shadow: 0px -3px 6px $dark-color
+        &::after
+            opacity: 1
+            -webkit-transform: translateY(0)
+            transform: translateY(0)
+
+
+// = = = = = about = = = = =
+
+.about
+    +flex
+    height: 57.6rem
+    margin-top: 6rem
+
+    @media #{$mq-md}
+        justify-content: space-around
+        flex-direction: column
+        height: calc(100vh - 10.5rem)
+
+.maincopy
+    padding-left: 6.15vw
+    flex-shrink: 0
+
+    @media #{$mq-md}
+        align-self: flex-start
+        margin-top: 8.7rem
+
+    @media #{$mq-xs}
+        margin-top: 3.8rem
+        
+    @media #{$mq-lg}
+        padding-left: calc( calc(100vw - 1000px) / 2 )
+
+    h1
+        +font-size(4rem,2.3rem)
+        font-weight: 500
+        line-height: 1.45
+        margin-bottom: 2.6rem
+
+        @media #{$mq-xs}
+            margin-bottom: 2.2rem
+    
+    p
+        margin-bottom: 3rem
+
+        @media #{$mq-xs}
+            margin-bottom: 2.2rem
+
+
+.mainimg
+    position: relative
+    overflow: hidden
+    width: 49.2%
+    height: 69.4%
+
+    @media #{$mq-md}
+        margin-bottom: 8.7rem
+    @media #{$mq-xs}
+        margin: 3.8rem 0
+
+    img
+        position: absolute
+        top: 50%
+        left: 0
+        -webkit-transform: translate(0, -50%)
+        transform: translate(0, -50%)
+        width: auto
+        height: 100%
+        
+    @media #{$mq-md}
+        align-self: flex-end
+        height: 43.5%
+        width: calc(100% - 6.15vw)
+    
+
+// = = = = = features = = = = =
+
+.features
+    background-color: #EDF0F7
+    +space-size("padding","top")
+
+    .section-title
+        margin-top: 0
+
+.features-contents
+    +md-container
+    text-align: center
+
+.features-cards
+    display: flex
+    flex-direction: column
+
+.features-card
+    +flex
+    +space-size("margin","bottom")
+
+    &:nth-child(2)
+        @media #{$mq-sm}
+            flex-direction: row-reverse
+
+            .features-text
+                margin: 0 0 0 12.65%
+                text-align: left
+
+.features-text
+    margin-right: 12.65%
+    text-align: right
+
+    @media #{$mq-xs}
+        margin: 0
+        text-align: center
+        width: 80.6%
+        max-width: 265px
+
+    h2
+        +title
+        display: inline-block
+
+        @media #{$mq-xs}
+            margin-bottom: 1.4rem
+
+    p
+        @media #{$mq-xs}
+            text-align: left
+
+.features-img
+    width: 48.8%
+    border-radius: 8px
+
+    @media #{$mq-xs}
+        width: 100%
+        order: -1
+        margin-bottom: 2.8rem
+
+
+// = = = = = 配列 = = = = =
+
+.layout
+    +container
+    +space-size("margin","bottom")
+
+    img
+        width: 100%
+        max-width: 1000px  
+
+// = = = = = 使い方 = = = = =
+
+.howtouse
+    background-color: $primary-color
+    +space-size("padding","top")
+    +space-size("padding","bottom")
+
+    .section-title
+        color: $light-color
+        margin-top: 0
+
+.howtousecards
+    +flex
+    +container
+    align-items: stretch
+
+.howtousecard
+    padding: 25px 37px
+    background-color: $light-color
+    border-radius: 10px
+    width: 32%
+    text-align: center
+
+    @media #{$mq-xs}
+        width: 100%
+
+    @media #{$mq-sm}
+        max-width: 320px
+
+    &:not(:last-child)
+        @media #{$mq-xs}
+            margin-bottom: 3.3rem
+
+    h2
+        +font-size(2.6rem,2rem)
+        // font-size: 2.6rem
+        font-weight: 700
+        color: $secondary-color
+
+    h3
+        +title
+        margin-bottom: 25px
+    
+    img
+        margin-bottom: 20px
+        width: 100%
+        max-width: 160px
+    p
+        // +body-text
+        text-align: left
+        word-break: break-all
+
+
+// = = = = = 引用 = = = = =
+
+.quotation
+    +md-container
+    +space-size("margin","top")
+    +space-size("margin","bottom")
+    // margin-bottom: 10rem
+    border: solid 1px $primary-color
+    padding: 10.6rem 8.5rem
+    position: relative
+
+    @media #{$mq-xs}
+        padding: 6.6rem 3.2rem
+
+    h1
+        +font-size(2rem,1.4rem)
+        margin-bottom: 3.5rem
+        // font-size: 2rem
+        font-weight: 500
+    
+    &::before
+        +font-size(10rem,6.8rem)
+        font-weight: 500
+        content: "“"
+        position: absolute
+        top: 2.2rem
+        left: 2.2rem
+        // font-size: 10rem
+        color: rgba($primary-color,0.25)
+        font-family: 'Noto Sans JP', sans-serif
+        line-height: 1
+
+        @media #{$mq-xs}
+            top: 1.2rem
+            left: 1.2rem
+
+    &::after
+        +font-size(1.4rem,1rem)
+        content: "三省堂『新明解四字熟語辞典』から引用"
+        position: absolute
+        bottom: 2.2rem
+        right: 2.2rem
+        color: rgba($primary-color,0.5)
+
+        @media #{$mq-xs}
+            bottom: 1.2rem
+            right: 1.2rem
+
+ 
+
+// = = = = = footer = = = = =
+
+.footer
+    // margin-top: 10rem
+    padding: 13rem 0
+    background-color: $primary-color
+    color: $light-color
+    text-align: center
+
+    @media #{$mq-xs}
+        padding: 8rem 0
+
+    h1
+        +font-size(5rem,3.2rem)
+        font-weight: 500
+        // margin-bottom: 1rem
+    p
+        +font-size(1.6rem,1.2rem)
+        margin-bottom: 6rem
+        font-weight: 100
+
+        @media #{$mq-xs}
+            letter-spacing: 0
+
+
+.fadeUp
+    animation-name: fadeUpAnime
+    animation-duration: 0.5s
+    animation-fill-mode: forwards
+    opacity: 0
+
+
+@keyframes fadeUpAnime
+  from
+    opacity: 0
+    transform: translateY(100px)
+
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// スクロールをしたら出現する要素にはじめに透過0を指定　
+ 
+.fadeUpTrigger
+    opacity: 0

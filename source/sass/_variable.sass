@@ -1,0 +1,58 @@
+// = = = = = メディアクエリ = = = = =
+
+$mq-xs: "(max-width: 480px)"
+// $mq-sm: "(min-width: 600px)"
+$mq-sm: "(min-width: 481px)"
+$mq-md: "(max-width: 992px)"
+$mq-lg: "(min-width: 1140px)"
+    
+
+// = = = = = 変数 = = = = =
+
+$light-color: #ffffff
+$dark-color: #292929
+$primary-color: #556DAC
+$secondary-color: #F67280
+$tertiary-color: #F9AAB3
+=sans
+    font-family: 'Quicksand', 'Noto Sans JP', sans-serif
+
+
+// = = = = = parts = = = = = 
+=container
+    margin: 0 auto
+    width: 87.7%
+    max-width: 1000px
+
+=md-container
+    margin: 0 auto
+    width: 87.7%
+    max-width: 850px
+
+=flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @media #{$mq-xs}
+        flex-direction: column
+
+=title
+    +font-size(2.2rem,1.8rem)
+    font-weight: 500
+    color: $primary-color
+
+=body-text
+    font-size: 1.6rem
+    font-weight:400
+    
+=space-size($property,$position)
+     #{$property}-#{$position}: 8.7rem
+
+     @media #{$mq-xs}
+         #{$property}-#{$position}: 6rem
+
+=font-size($pc-size,$sp-size)
+    font-size: $pc-size
+    @media #{$mq-xs}
+        font-size: $sp-size
