@@ -56,3 +56,8 @@ $tertiary-color: #F9AAB3
     font-size: $pc-size
     @media #{$mq-xs}
         font-size: $sp-size
+
+=responsive-size($name,$pc-size,$sp-size)
+    #{$name}: $pc-size
+    @media #{$mq-xs}
+        #{$name}: $sp-size

@@ -250,88 +250,97 @@ a:link, a:visited, a:hover, a:active {
   transform: translateY(0);
 }
 
-.about {
+/* * * * * main * * * * */
+.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 57.6rem;
   margin-top: 6rem;
-}
-@media (max-width: 480px) {
-  .about {
-    flex-direction: column;
-  }
-}
-@media (max-width: 992px) {
-  .about {
-    justify-content: space-around;
-    flex-direction: column;
-    height: calc(100vh - 10.5rem);
-  }
-}
-
-.maincopy {
   padding-left: 6.15vw;
-  flex-shrink: 0;
+  padding-top: 8.6rem;
+  padding-bottom: 8.6rem;
 }
-@media (max-width: 992px) {
-  .maincopy {
-    align-self: flex-start;
-    margin-top: 8.7rem;
+@media (max-width: 480px) {
+  .main {
+    flex-direction: column;
   }
 }
 @media (max-width: 480px) {
-  .maincopy {
-    margin-top: 3.8rem;
+  .main {
+    padding-top: 3.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    padding-bottom: 3.8rem;
+  }
+}
+@media (max-width: 992px) {
+  .main {
+    flex-direction: column;
   }
 }
 @media (min-width: 1140px) {
-  .maincopy {
+  .main {
     padding-left: calc((100vw - 1000px) / 2);
   }
 }
-.maincopy h1 {
+
+.main__bady {
+  flex-shrink: 0;
+}
+@media (max-width: 992px) {
+  .main__bady {
+    align-self: flex-start;
+  }
+}
+
+.main__title {
   font-size: 4rem;
   font-weight: 500;
   line-height: 1.45;
   margin-bottom: 2.6rem;
 }
 @media (max-width: 480px) {
-  .maincopy h1 {
+  .main__title {
     font-size: 2.3rem;
   }
 }
 @media (max-width: 480px) {
-  .maincopy h1 {
-    margin-bottom: 2.2rem;
-  }
-}
-.maincopy p {
-  margin-bottom: 3rem;
-}
-@media (max-width: 480px) {
-  .maincopy p {
+  .main__title {
     margin-bottom: 2.2rem;
   }
 }
 
-.mainimg {
+.main__text {
+  margin-bottom: 3rem;
+}
+@media (max-width: 480px) {
+  .main__text {
+    margin-bottom: 2.2rem;
+  }
+}
+
+.main__img-wrapper {
   position: relative;
   overflow: hidden;
+  height: 400px;
   width: 49.2%;
-  height: 69.4%;
 }
 @media (max-width: 992px) {
-  .mainimg {
-    margin-bottom: 8.7rem;
+  .main__img-wrapper {
+    margin-top: 8.7rem;
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
-  .mainimg {
-    margin: 3.8rem 0;
+  .main__img-wrapper {
+    height: 256px;
+    margin-top: 3.8rem;
   }
 }
-.mainimg img {
+
+.main__img {
   position: absolute;
   top: 50%;
   left: 0;
@@ -339,13 +348,6 @@ a:link, a:visited, a:hover, a:active {
   transform: translate(0, -50%);
   width: auto;
   height: 100%;
-}
-@media (max-width: 992px) {
-  .mainimg {
-    align-self: flex-end;
-    height: 43.5%;
-    width: calc(100% - 6.15vw);
-  }
 }
 
 .features {

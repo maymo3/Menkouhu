@@ -33,13 +33,13 @@ html(lang="ja")
                     li: a.nav-item(href="#features") 特徴
                     li: a.nav-item(href="#howtouse") 使い方
                     li: a.nav-item(href="#download") ダウンロード
-        section.about
-            .maincopy
-                h1 日本語のための#[br]キーボード配列
-                p Menkouhuは日本語のローマ字入力に特化した#[br]Mac用キーボード配列です。
+        section.main
+            .main__bady
+                h1.main__title 日本語のための#[br]キーボード配列
+                p.main__text Menkouhuは日本語のローマ字入力に特化した#[br]Mac用キーボード配列です。
                 .button: a(href= css_path + "/download/Menkouhu.dmg" download) 無料ダウンロード
-            .mainimg
-                img(src= css_path + "/img/keyboard.png")
+            .main__img-wrapper
+                img.main__img(src= css_path + "/img/keyboard.png")
         section#features.features
             .features-contents
                 h1.section-title 特徴

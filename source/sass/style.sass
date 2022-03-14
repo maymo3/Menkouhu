@@ -186,73 +186,84 @@ a:link, a:visited, a:hover, a:active
             transform: translateY(0)
 
 
-// = = = = = about = = = = =
+/* * * * * main * * * * */
 
-.about
+.main
     +flex
-    height: 57.6rem
+    // height: 57.6rem
     margin-top: 6rem
+    padding-left: 6.15vw
+    +responsive-size(padding-top,8.6rem,3.8rem)
+    +responsive-size(padding-bottom,8.6rem,3.8rem)
 
     @media #{$mq-md}
-        justify-content: space-around
+        // justify-content: space-around
         flex-direction: column
-        height: calc(100vh - 10.5rem)
+        // height: calc(100vh - 10.5rem)
 
-.maincopy
-    padding-left: 6.15vw
+    @media #{$mq-lg}
+        padding-left: calc( calc(100vw - 1000px) / 2 )
+
+.main__bady
     flex-shrink: 0
 
     @media #{$mq-md}
         align-self: flex-start
-        margin-top: 8.7rem
+        // margin-top: 8.7rem
+
+    // @media #{$mq-xs}
+    //     margin-top: 3.8rem
+        
+    
+.main__title
+    +font-size(4rem,2.3rem)
+    font-weight: 500
+    line-height: 1.45
+    margin-bottom: 2.6rem
 
     @media #{$mq-xs}
-        margin-top: 3.8rem
-        
-    @media #{$mq-lg}
-        padding-left: calc( calc(100vw - 1000px) / 2 )
+        margin-bottom: 2.2rem
 
-    h1
-        +font-size(4rem,2.3rem)
-        font-weight: 500
-        line-height: 1.45
-        margin-bottom: 2.6rem
+.main__text
+    margin-bottom: 3rem
 
-        @media #{$mq-xs}
-            margin-bottom: 2.2rem
-    
-    p
-        margin-bottom: 3rem
-
-        @media #{$mq-xs}
-            margin-bottom: 2.2rem
+    @media #{$mq-xs}
+        margin-bottom: 2.2rem
 
 
-.mainimg
+.main__img-wrapper
     position: relative
     overflow: hidden
+    height: 400px
     width: 49.2%
-    height: 69.4%
+    // height: 69.4%
 
     @media #{$mq-md}
-        margin-bottom: 8.7rem
+        margin-top: 8.7rem
+        width: 100%
+
     @media #{$mq-xs}
-        margin: 3.8rem 0
+        height: 256px
+        margin-top: 3.8rem
 
-    img
-        position: absolute
-        top: 50%
-        left: 0
-        -webkit-transform: translate(0, -50%)
-        transform: translate(0, -50%)
-        width: auto
-        height: 100%
-        
-    @media #{$mq-md}
-        align-self: flex-end
-        height: 43.5%
-        width: calc(100% - 6.15vw)
+.main__img
+    position: absolute
+    top: 50%
+    left: 0
+    -webkit-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    width: auto
+    height: 100%
     
+    // @media #{$mq-md}
+    //     align-self: flex-end
+        // width: 100%
+        // height: 43.5%
+        // width: calc(100% - 6.15vw)
+
+    // @media #{$mq-xs}
+        // width: 352px
+        
 
 // = = = = = features = = = = =
 
